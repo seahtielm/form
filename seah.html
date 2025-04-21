@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Order Form</title>
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    /* General Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Header Styling */
+header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+/* Main Container */
+.container {
+    width: 80%;
+    margin: 30px auto;
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Section Headings */
+h3, h4 {
+    margin-top: 0;
+    color: #2f4f4f;
+}
+
+/* Form Styling */
+form {
+    display: grid;
+    gap: 25px;
+}
+
+/* Input Fields */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="time"],
+textarea,
+select {
+    width: 100%;
+    padding: 12px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+/* Textarea */
+textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+/* Radio and Checkbox Groups */
+.radio-group, .checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.radio-group label,
+.checkbox-group label {
+    margin-right: 15px;
+}
+
+/* Images in Form */
+.form-section img {
+    width: 150px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* Section Box */
+.form-section {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-left: 5px solid #4CAF50;
+    border-radius: 8px;
+}
+
+/* Buttons */
+.btn-container {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+}
+
+button {
+    padding: 12px 25px;
+    font-size: 1em;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+button[type="reset"] {
+    background-color: #f44336;
+    color: white;
+}
+
+button[type="reset"]:hover {
+    background-color: #e53935;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #4CAF50;
+    color: white;
+    margin-top: 30px;
+    font-size: 0.9em;
+    border-top: 1px solid #e0e0e0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .btn-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .form-section img {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Order Your Meal</h1>
+  </header>
+
+  <div class="container">
+    <form action="#" method="POST">
+
+      <!-- Customer Information -->
+      <div class="form-section">
+        <h3>Customer Information</h3>
+
+        <label for="fullname">Full Name:</label>
+        <input type="text" id="fullname" name="fullname" required />
+
+        <label for="address">Complete Address:</label>
+        <input type="text" id="address" name="address" required />
+
+        <label for="contact">Contact Number:</label>
+        <input type="tel" id="contact" name="contact" required />
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="directions">How to Get Here:</label>
+        <textarea id="directions" name="directions" required></textarea>
+
+        <label>Date and Time:</label>
+        <input type="date" name="date" required />
+        <input type="time" name="time" required />
+      </div>
+
+      <!-- Order Form -->
+      <div class="form-section">
+        <h3>Order Form</h3>
+
+        <!-- Burger Section -->
+        <h4>Burgers</h4>
+        <img src="https://images.unsplash.com/photo-1606755962773-5b66c84dc3d7?auto=format&fit=crop&w=800&q=60" alt="Burger" />
+
+        <label>Patty:</label>
+        <div class="radio-group">
+          <input type="radio" name="burger-patty" value="Single Patty" required /> Single Patty
+          <input type="radio" name="burger-patty" value="Double Patty" /> Double Patty
+        </div>
+
+        <label>Toppings:</label>
+        <div class="checkbox-group">
+          <input type="checkbox" name="toppings" value="Cheese" /> Cheese
+          <input type="checkbox" name="toppings" value="Coleslaw" /> Coleslaw
+          <input type="checkbox" name="toppings" value="Tomato" /> Tomato
+          <input type="checkbox" name="toppings" value="Onion" /> Onion
+          <input type="checkbox" name="toppings" value="Bacon" /> Bacon
+        </div>
+
+        <label for="bun">Bun Type:</label>
+        <select name="bun" id="bun">
+          <option value="white">White Bun</option>
+          <option value="wheat">Wheat Bun</option>
+          <option value="honey-oat">Honey Oat</option>
+          <option value="sugar-free">Sugar-Free</option>
+        </select>
+
+        <label for="burger-qty">Quantity:</label>
+        <input type="number" name="burger-qty" min="1" required />
+
+        <!-- Pasta Section -->
+        <h4>Pasta</h4>
+        <img src="https://images.unsplash.com/photo-1589308078055-ebd25c49b3c1?auto=format&fit=crop&w=800&q=60" alt="Pasta" />
+
+        <label for="pasta-sauce">Sauce:</label>
+        <select name="pasta-sauce" id="pasta-sauce">
+          <option value="carbonara">Carbonara</option>
+          <option value="pesto">Pesto</option>
+          <option value="spaghetti">Spaghetti</option>
+          <option value="extra-cheese">Extra Cheese</option>
+          <option value="extra-sauce">Extra Sauce</option>
+        </select>
+
+        <label for="pasta-qty">Quantity (per box):</label>
+        <input type="number" name="pasta-qty" min="1" required />
+
+        <!-- Fries Section -->
+        <h4>Fries</h4>
+        <img src="https://images.unsplash.com/photo-1585238341988-28f7c6e48f02?auto=format&fit=crop&w=800&q=60" alt="Fries" />
+
+        <label for="fries-size">Size:</label>
+        <select name="fries-size" id="fries-size">
+          <option value="s">Small</option>
+          <option value="m">Medium</option>
+          <option value="l">Large</option>
+        </select>
+
+        <label for="fries-flavor">Flavor:</label>
+        <select name="fries-flavor" id="fries-flavor">
+          <option value="bbq">BBQ</option>
+          <option value="cheese">Cheese</option>
+          <option value="sour-cream">Sour Cream</option>
+        </select>
+
+        <label for="fries-qty">Quantity:</label>
+        <input type="number" name="fries-qty" min="1" required />
+
+        <!-- Drinks Section -->
+        <h4>Drinks</h4>
+        <img src="https://images.unsplash.com/photo-1615915466960-3a2f66f3981d?auto=format&fit=crop&w=800&q=60" alt="Drinks" />
+
+        <label for="drink-type">Drink Type:</label>
+        <select name="drink-type" id="drink-type">
+          <option value="soda">Soda</option>
+          <option value="juice">Juice</option>
+          <option value="water">Water</option>
+        </select>
+
+        <label for="drink-size">Size:</label>
+        <select name="drink-size" id="drink-size">
+          <option value="small">Small</option>
+          <option value="medium">Medium</option>
+          <option value="large">Large</option>
+        </select>
+
+        <label for="drink-qty">Quantity:</label>
+        <input type="number" name="drink-qty" min="1" required />
+
+        <!-- Delivery Option -->
+        <label for="method">Delivery Method:</label>
+        <select name="method" id="method">
+          <option value="delivery">Delivery</option>
+          <option value="pickup">Pick-Up</option>
+        </select>
+      </div>
+
+      <!-- Feedback -->
+      <div class="form-section">
+        <label for="feedback">How can we improve this form?</label>
+        <textarea name="feedback" id="feedback" placeholder="Your feedback..."></textarea>
+      </div>
+
+      <!-- Buttons -->
+      <div class="btn-container">
+        <button type="submit">Submit Order</button>
+        <button type="reset">Clear Form</button>
+      </div>
+    </form>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Foodie Express. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
